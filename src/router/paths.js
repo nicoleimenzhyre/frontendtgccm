@@ -30,47 +30,23 @@ export default [
       name: "Dashboard View",
       requiresAuth: true
     },
-    component: () => import(`@/views/DashboardView`),
+    component: () => import(`@/views/DashboardView.vue`),
     children: [
       {
-        path: "/dashboard",
+        path: "",
         meta: {
           name: "Dashboard",
           requiresAuth: true
         },
-        component: () => import(`@/components/DashboardViews/Dashboard`)
+        component: () => import(`@/components/DashboardViews/Dashboard.vue`)
       },
       {
         path: "/users",
         meta: {
-          name: "User List",
+          name: "Users",
           requiresAuth: true
         },
         component: () => import(`@/components/DashboardViews/Users`)
-      },
-      {
-        path: "/user-profile",
-        meta: {
-          name: "User Profile",
-          requiresAuth: true
-        },
-        component: () => import(`@/components/DashboardViews/UserProfile`)
-      },
-      {
-        path: "/map",
-        meta: {
-          name: "Map",
-          requiresAuth: true
-        },
-        component: () => import(`@/components/DashboardViews/Maps`)
-      },
-      {
-        path: "/settings",
-        meta: {
-          name: "Settings",
-          requiresAuth: true
-        },
-        component: () => import(`@/components/DashboardViews/Settings`)
       }
     ]
   }

@@ -1,56 +1,45 @@
-drawer
-
 <template>
   <v-navigation-drawer
-    id="app-drawer"
-    app
-    dark
-    floating
-    persistent
-    mobile-break-point="991"
-    width="260"
-  >
-    <v-img
-      height="100%"
+      v-model="drawer"
+      :mini-variant.sync="mini"
+      permanent
+      dark
+      app
     >
-      <v-layout
-        class="fill-height"
-        tag="v-list"
-        column
-      >
-        <v-list-tile avatar>
-          <v-list-tile-avatar
-            color="grey"
-          >
-            <v-img
-              :src="logo"
-              height="100"
-              contain
-            />
-          </v-list-tile-avatar>
-          <v-list-tile-title class="title">
-            CRUD LaravelVuejs
-          </v-list-tile-title>
-        </v-list-tile>
-        <v-divider/>
-        <v-list-tile
-          v-for="(link, i) in links"
-          :key="i"
-          :to="link.to"
-          :active-class="color"
-          avatar
-          class="v-list-item"
+      <v-list-item>
+        <v-list-item-avatar>
+          <v-img src="https://randomuser.me/api/portraits/men/85.jpg"></v-img>
+        </v-list-item-avatar>
+
+        <v-list-item-title>John Leider</v-list-item-title>
+
+        <v-btn
+          icon
+          @click.stop="mini = !mini"
         >
-          <v-list-tile-action>
-            <v-icon>{{ link.icon }}</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-title
-            v-text="link.text"
-          />
-        </v-list-tile>
-      </v-layout>
-    </v-img>
-  </v-navigation-drawer>
+          <v-icon>chevron_left</v-icon>
+        </v-btn>
+      </v-list-item>
+
+      <v-divider></v-divider>
+
+      <v-list dense>
+        <v-list-item
+          v-for="item in items"
+          :key="item.title"
+          :to="item.to"
+          link
+        >
+          <v-list-item-icon>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-list-item-icon>
+
+          <v-list-item-content>
+            <v-list-item-title>{{ item.title }}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
 </template>
 
 <script>
@@ -59,36 +48,21 @@ import router from "@/router";
 
 export default {
   data: () => ({
-    logo: require('@/assets/logo.png'),
-    links: [
+    drawer: true,
+    items: [
       {
-        to: '/',
-        icon: 'dashboard',
-        text: 'Dashboard'
+        to: '/dashboard',
+        title: 'Dashboard',
+        icon: 'dashboard'
       },
       {
         to: '/users',
-        icon: 'account_box',
-        text: 'User List'
+        title: 'Users',
+        icon: 'account_circle'
       },
-      {
-        to: '/user-profile',
-        icon: 'assignment_ind',
-        text: 'User Profile'
-      },
-      {
-        to: '/map',
-        icon: 'location_on',
-        text: 'Map'
-      },
-      {
-        to: '/settings',
-        icon: 'settings',
-        text: 'Settings'
-      }
     ],
-    responsive: false
-  })
+    mini: false,
+  }),
 }
 </script>
 
