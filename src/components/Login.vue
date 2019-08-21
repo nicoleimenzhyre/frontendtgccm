@@ -1,6 +1,6 @@
 <template>
   <v-content>
-    <v-container fluid>
+    <v-container fluid dark>
       <v-layout align-center justify-center>
         <v-flex xs12 sm8 md4>
           <v-card class="elevation-12">
@@ -33,7 +33,7 @@
             </v-card-actions>
             <v-snackbar v-model="snackbar" color="error" :top="true">
               {{ errorMessages }}
-              <v-btn dark flat @click="snackbar = false">Close</v-btn>
+              <v-btn dark text @click="snackbar = false">Close</v-btn>
             </v-snackbar>
           </v-card>
         </v-flex>

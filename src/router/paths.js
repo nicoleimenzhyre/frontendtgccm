@@ -47,6 +47,22 @@ export default [
           requiresAuth: true
         },
         component: () => import(`@/components/DashboardViews/Users`)
+      },
+      {
+        path: "/add-snd-member",
+        meta: {
+          name: "Add SND Member",
+          requiresAuth: true
+        },
+        component: () => import(`@/components/DashboardViews/AddSNDMember`)
+      },
+      {
+        path: "/add-roles",
+        meta: {
+          name: "Add Roles",
+          requiresAuth: true
+        },
+        component: () => import(`@/components/DashboardViews/AddRoles`)
       }
     ]
   }
