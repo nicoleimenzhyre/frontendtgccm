@@ -41,9 +41,9 @@ export default [
         component: () => import(`@/components/DashboardViews/Dashboard.vue`)
       },
       {
-        path: "/users",
+        path: "/members",
         meta: {
-          name: "Users",
+          name: "Members",
           requiresAuth: true
         },
         component: () => import(`@/components/DashboardViews/Users`)

@@ -104,8 +104,7 @@ export default {
       }
   },
   methods: {
-    ...mapActions(['fetchRolesData']),
-    ...mapActions(['postRoleData']),
+    ...mapActions(['fetchRolesData', 'postRoleData']),
     submit() {
         this.postRoleData({'role_name': this.role_name, 'description': this.description})
     }

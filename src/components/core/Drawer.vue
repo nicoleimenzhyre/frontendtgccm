@@ -77,8 +77,8 @@ export default {
         icon: 'dashboard'
       },
       {
-        to: '/users',
-        text: 'Users',
+        to: '/members',
+        text: 'Members',
         icon: 'account_circle'
       },
        {
