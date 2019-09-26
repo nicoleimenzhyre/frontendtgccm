@@ -57,6 +57,22 @@ export default [
         component: () => import(`@/components/DashboardViews/AddSNDMember`)
       },
       {
+        path: "/snd-regular",
+        meta: {
+          name: "SND Regulars",
+          requiresAuth: true
+        },
+        component: () => import(`@/components/DashboardViews/SNDRegistration`)
+      },
+      {
+        path: "/snd-first-timers",
+        meta: {
+          name: "SND First Timers",
+          requiresAuth: true
+        },
+        component: () => import(`@/components/DashboardViews/SNDFirstTimers`)
+      },
+      {
         path: "/add-roles",
         meta: {
           name: "Add Roles",

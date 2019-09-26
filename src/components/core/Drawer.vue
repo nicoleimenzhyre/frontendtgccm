@@ -90,8 +90,13 @@ export default {
         text: "Registration",
         subLinks: [
           {
-            to: "/snd",
-            text: "SND Registration",
+            to: "/snd-regular",
+            text: "SND Regular Registration",
+            icon: 'view_module',
+          },
+           {
+            to: "/snd-first-timers",
+            text: "SND First Timers",
             icon: 'view_module',
           },
           {
